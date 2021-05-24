@@ -1,0 +1,253 @@
+#service-img-holder {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+#service-img {
+  z-index: 0;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  opacity: 1;
+}
+
+#service-title {
+  z-index: 2;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  opacity: 1;
+
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 5vw;
+  letter-spacing: 8px;
+  font-weight: lighter;
+}
+@media screen and (max-width: 1100px) {
+  #service-img {
+    min-width: 200%;
+  }
+}
+
+b,
+h1,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+  color: #25619d;
+  text-align: left;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h3 {
+  max-width: 75%;
+  font-size: 17px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header > div {
+    max-width: none;
+  }
+}
+
+/*-------------Contenu---------------*/
+main {
+  width: 750px;
+  margin: 5vh auto;
+}
+
+main section {
+  padding: 3vh 0;
+  text-align: justify;
+  text-align-last: left;
+}
+
+main h4 {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 35px;
+}
+
+main h5 {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 1vh 0;
+}
+
+main p,
+main li {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+main p,
+main ul {
+  margin: 1em 0;
+}
+
+main ul {
+  padding-left: 20px;
+}
+
+main .split-screen {
+  display: flex;
+}
+
+main .split-screen > div {
+  flex: 1;
+  padding: 0 2vw 0 0;
+}
+
+main .split-screen > div > p:first-child {
+  margin-top: 0;
+}
+
+main ul {
+  width: fit-content;
+  text-align: left !important;
+}
+
+main hr {
+  width: 100%;
+  background: #26619d;
+  border: 1px solid #26619d;
+  margin: 1.5vh 0;
+}
+
+main .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+main b {
+  font-weight: 700;
+}
+
+main a {
+  color: #000;
+  position: relative;
+  text-decoration: none;
+}
+
+main a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    width: 80%;
+  }
+
+  main h4 {
+    font-size: clamp(20px, 3.5vw, 27px);
+  }
+
+  main h5 {
+    font-size: clamp(15px, 2.5vw, 20px);
+  }
+
+  main p,
+  main li {
+    font-size: clamp(13px, 1.75vw, 16px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .split-screen {
+    display: block;
+  }
+
+  main .split-screen > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  main p {
+    margin: 1em 0;
+  }
+
+  main hr {
+    margin: 2vh auto;
+  }
+
+  main section {
+    padding: 2vh 0;
+  }
+}
+
+/*-------- Contact --------*/
+
+section #quote-button {
+  margin: 0 auto;
+  margin-top: 5%;
+  text-align: center;
+  transition: all 0.5s ease;
+  -moz-transition: width 0.2s;
+  -webkit-transition: width 0.2s;
+  margin-bottom: 5%;
+  width: 14vw;
+  min-width: fit-content;
+  padding-bottom: 100px;
+}
+
+section #quote-button:hover {
+  width: 160px;
+}
+
+section #quote-button a {
+  display: block;
+  text-decoration: none;
+
+  text-align: center;
+  color: #25619d;
+  text-transform: uppercase;
+  font-weight: Bold;
+  letter-spacing: 1px;
+
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.75vh;
+  padding: 3px 0;
+  width: 100%;
+  border-bottom: #25619d 2px solid;
+}

@@ -1,0 +1,197 @@
+#contact-section #container {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 100vh;
+}
+
+#right-region {
+  overflow: hidden;
+}
+
+#map-holder {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#contact-section #container #left-region,
+#contact-section #container #right-region {
+  flex: 1;
+}
+
+#contact-section #container #left-region {
+  display: flex;
+  flex-direction: column;
+  padding: 10% 2% calc(20vh + 50px) 5%;
+  margin: 0;
+}
+
+#contact-section #container #right-region {
+  padding: 10% 5% calc(20vh + 50px) 2%;
+  margin: 0;
+}
+
+#contact-section #left-region #address,
+#contact-section #left-region #contact-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1% 0;
+}
+
+#contact-section #left-region #contact-form {
+  display: flex;
+  flex-direction: column;
+  flex: 8;
+  margin-top: 7%;
+  margin-right: 5%;
+}
+
+#contact-section #contact-form span {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 12pt;
+  color: #25619d;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+#contact-section #contact-form #form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#contact-section #form-container input,
+#contact-section #contact-form #submit {
+  margin: 1% 0;
+  padding: 2% 1%;
+  outline: none;
+  background-color: #e4e4e4;
+  background-color: rgba(0, 0, 0, 0.08);
+  border: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+}
+
+#contact-section #contact-form #holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#contact-section #contact-form #holder input {
+  width: 47%;
+}
+
+#contact-section #contact-form input,
+#contact-section #contact-form textarea {
+  font-size: 1.5vh;
+}
+
+#contact-section #contact-form textarea {
+  resize: none;
+  width: 96%;
+  flex: 1;
+  outline: none;
+  margin: 1% 0;
+  padding: 2%;
+  background-color: #e4e4e4;
+  background-color: rgba(0, 0, 0, 0.08);
+  border: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+}
+
+#contact-section #contact-form #submit {
+  width: 20%;
+  padding: 5px 3%;
+  align-self: left;
+  cursor: pointer;
+}
+
+#contact-section #contact-form input:hover,
+#contact-section #contact-form #submit:hover {
+  background-color: #e0e0e0;
+}
+
+#contact-section #right-region #map {
+  height: max-content;
+  min-width: 100%;
+}
+
+#contact-section span {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.8vh;
+}
+
+#contact-section #address :first-child {
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+
+#contact-section label {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  width: 30%;
+  justify-content: left;
+
+  margin: 1% 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.5vh;
+  border-radius: 5px;
+  color: #6b6b6b;
+}
+#contact-section p {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  width: 30%;
+  justify-content: left;
+
+  margin: 2% 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.5vh;
+  border-radius: 5px;
+  color: #6b6b6b;
+}
+
+#contact-section select {
+  outline: none;
+  margin: 1% 0;
+  width: 47%;
+  padding: 2%;
+  background-color: #e4e4e4;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #6b6b6b;
+  border: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  font-size: 1.5vh;
+}
+
+@media screen and (max-width: 700px) {
+  #contact-section #container {
+    flex-direction: column;
+    height: fit-content;
+  }
+  #contact-section #container #left-region {
+    padding: 10% 10% 22vh 10%;
+    margin: 0;
+    width: 80%;
+  }
+  #contact-section #container #right-region {
+    display: none;
+  }
+
+  #contact-section #left-region #contact-form {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,111 @@
+header {
+  user-select: all;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 96%;
+  margin: 0 auto;
+  padding: 10px 2%;
+  height: 36px;
+  z-index: 100;
+  top: 0;
+}
+
+header nav {
+  width: 50%;
+  height: 100%;
+  border-radius: 25px;
+  margin: 0 5%;
+  padding: 0 5%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 6px 0px;
+  background-color: #25619d;
+  transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+  -moz-transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+  -webkit-transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+@media screen and (max-width: 700px) {
+  header nav {
+    width: fit-content;
+  }
+  header nav[isSmall] {
+    width: 60px;
+  }
+}
+header ul {
+  display: flex;
+  height: 100%;
+  list-style: none;
+  justify-content: space-between;
+  transform: scale(1);
+  transition: transform 0.1s 0s;
+  -moz-transition: transform 0.1s 0s;
+  -webkit-transition: transform 0.1s 0s;
+}
+
+header li {
+  align-self: center;
+  text-transform: uppercase;
+}
+
+header ul a {
+  display: block;
+  text-decoration: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  font-size: 11px;
+  color: #fff;
+}
+
+header img {
+  display: block;
+  transform: scale(0.6);
+}
+
+header nav[isSmall] {
+  width: 60px;
+  margin: 0 2%;
+  padding: 0 2%;
+  cursor: pointer;
+  transform: scale(0.5);
+}
+
+header nav[isSmall]:hover {
+  width: 4%;
+}
+
+header nav[isSmall] ul {
+  transform: scale(0);
+  opacity: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+header nav a:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #fff;
+  height: 2px;
+  transition-property: left, right;
+  -webkit-transition-property: left, right;
+  transition-duration: 0.25s;
+  -webkit-transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+}
+
+header nav a:hover:before,
+header nav a:focus:before,
+header nav a:active:before {
+  left: 5%;
+  right: 5%;
+}

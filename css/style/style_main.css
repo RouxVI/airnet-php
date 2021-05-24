@@ -1,0 +1,208 @@
+body #main_page_holder {
+  z-index: 5;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+body[darkMode] #over-video {
+  background-color: #303030;
+}
+
+#over-video {
+  z-index: 2;
+  user-select: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #25619d;
+  opacity: 0;
+}
+#bg-video {
+  position: absolute;
+  user-select: none;
+  right: 0%;
+  bottom: 20px;
+  min-width: 100%;
+  min-height: 80%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+}
+
+main {
+  height: 100%;
+  width: 96%;
+  margin: 0 2%;
+  position: relative;
+  padding-bottom: 9%;
+  margin-top: 56px;
+}
+
+main #background,
+main #container {
+  height: 65%;
+  position: absolute;
+  margin: 7% auto;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+main #background #logo-holder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+main #background img {
+  display: block;
+  position: absolute;
+  height: 90%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 0.27s ease-in;
+  -moz-transition: opacity 0.27s ease-in;
+  -webkit-transition: opacity 0.27s ease-in;
+
+  animation: penBob 3s infinite ease-in-out;
+  -moz-animation: penBob 3s infinite ease-in-out;
+  -webkit-animation: penBob 3s infinite ease-in-out;
+}
+
+main #background img[stopAnimation] {
+  animation: none;
+  -moz-animation: none;
+  -webkit-animation: none;
+}
+
+@keyframes penBob {
+  0%,
+  100% {
+    transform: translateY(8%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+}
+
+body main #background #red_logo {
+  opacity: 1;
+  z-index: 0;
+}
+
+body[darkMode] main #background #red_logo {
+  opacity: 0;
+  z-index: -1;
+}
+
+body[darkMode] main #background #black_logo {
+  opacity: 1;
+  z-index: 0;
+}
+
+body main #background #black_logo {
+  opacity: 0;
+  z-index: -1;
+}
+
+body main #background div {
+  width: 16%;
+  height: 4%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+body main #background div #hole {
+  background-color: #ebebeb;
+  height: 100%;
+  width: 100%;
+  font-size: 0;
+  border-radius: 75%;
+  transform: scale(1);
+  transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+}
+
+body[darkMode] main #background div #hole {
+  background-color: #2b2b2b;
+}
+
+main #container div {
+  height: 90%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+}
+main #container h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+main #container h1,
+main #container h3 {
+  color: #fff;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 3.5vw;
+  text-align: center;
+  letter-spacing: 8px;
+  font-weight: normal;
+}
+
+main #container #scroll_holder h3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 1.5vw;
+  letter-spacing: 3px;
+  margin-top: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition-property: opacity, transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+main #container #scroll_holder h3[isRendered] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+main #container #scroll_holder h3[toHiding] {
+  transform: translateY(-20px);
+}
+
+@media only screen and (max-width: 700px) {
+  main #container div {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  main #container h1 {
+    letter-spacing: 4px;
+    font-size: 6vw;
+  }
+
+  main #container #scroll_holder h3 {
+    font-size: 3vw;
+  }
+}

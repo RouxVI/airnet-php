@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  z-index: 0;
+}
+
+body,
+#main_page_holder,
+#projects_section,
+#showcase-section {
+  transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #25619d;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4b7a;
+}
+
+::selection {
+  color: #fff;
+  background: #25619d;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #25619d;
+}

@@ -1,0 +1,59 @@
+#landing-section #pastille {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  margin: 0 35%;
+  z-index: 1;
+  flex: 3;
+}
+
+#landing-section #scroller {
+  margin: 0 auto;
+  margin-top: 0%;
+  position: relative;
+  width: 5px;
+  height: 7%;
+  background-color: #25619d;
+  border-radius: 100px;
+  animation: scroller-direction 3s infinite ease-in-out;
+  transform-origin: 50% 0;
+}
+
+@keyframes scroller-direction {
+  0%,
+  100% {
+    transform: scaleY(0);
+  }
+  14%,
+  16% {
+    transform: scaleY(0.33);
+  }
+  34%,
+  36% {
+    transform: scaleY(0.66);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+#landing-section #pastille img {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+  animation: bobbing infinite 3s ease-in-out;
+}
+
+@keyframes bobbing {
+  0%,
+  100% {
+    transform: translateY(-3%);
+  }
+  50% {
+    transform: translateY(3%);
+  }
+}

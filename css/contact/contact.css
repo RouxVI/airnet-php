@@ -1,0 +1,129 @@
+body {
+  background-color: #fff;
+}
+
+#landing-section {
+  user-select: none;
+}
+#landing-section,
+#contact-section {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+}
+
+.contact-title {
+  color: #25619d;
+  text-transform: uppercase;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  text-align: center;
+  letter-spacing: 8px;
+}
+#contact-title {
+  z-index: 1;
+  position: relative;
+
+  width: 100%;
+  opacity: 1;
+
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+#contact-intro {
+  z-index: 1;
+  position: relative;
+  width: 80%;
+  padding-left: 10%;
+  margin: 50px 0;
+
+  font-size: 2.5vh;
+  font-weight: normal;
+  color: #039ed8;
+}
+
+footer {
+  user-select: all;
+  z-index: 5;
+  position: absolute;
+  display: inline-flex;
+  bottom: 0;
+  left: 0;
+  min-height: 120px;
+  height: 20vh;
+  width: 100%;
+  background-color: #25619d;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#footer-holder {
+  color: #fff;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  text-align: left;
+  font-size: 2vh;
+
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  padding-left: 10%;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#address {
+  margin-right: 20%;
+}
+
+#contact-info {
+  margin-right: 20%;
+}
+#contact-info b {
+  opacity: 0;
+}
+
+#social-container {
+  position: absolute;
+  bottom: 0px;
+  right: 10%;
+}
+#social-container a {
+  text-decoration: none;
+  height: 35px;
+}
+
+.social-icon {
+  justify-content: start;
+  padding-top: 3.5vh;
+  width: 35px;
+  padding-right: 10px;
+  transform: translate(0);
+}
+.social-icon:hover {
+  transform: translate(0, -4px);
+}
+
+@media screen and (max-width: 700px) {
+  #address {
+    margin-top: 20px;
+    width: fit-content;
+    margin-right: 20px;
+  }
+  #contact-info {
+    width: fit-content;
+    margin-right: 20px;
+  }
+
+  #social-container a {
+    height: initial;
+  }
+}

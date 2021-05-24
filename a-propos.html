@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/jpg" href="res/favicon.png" />
+
+    <title>AIR.NET - À propos</title>
+
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/simple_header.css" />
+    <link rel="stylesheet" href="/css/about/about.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+      integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+      integrity="sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"
+      integrity="sha256-peenofh8a9TIqKdPKIeQE7mJvuwh+J0To7nslvpj1jI="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="index.html">| Acceuil |</a></li>
+          <li><a href="#" onclick="scrollToTeam()">Services</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="main-section">
+      <p id="service-title">À propos</p>
+      <p id="about-intro">
+        Notre mission: Assurez votre tranquillité d'esprit grâce à un système de ventilation et des conduits propres et impeccables.
+      </p>
+
+      <div id="scroller">
+        <p>Défiler</p>
+        <div id="indicator">Indicateur</div>
+      </div>
+      <img id="service-bg-img" src="res/about.jpg" alt="services de ventilation" />
+    </section>
+
+    <section id="team-section">
+      <div id="triangle-holder">
+        <img id="background-triangle" src="res/background_triangle.png" alt="triangle" />
+      </div>
+
+      <div id="container">
+        <p class="about-section-sub-title">Nos services</p>
+        <div id="team-member"></div>
+        <div id="team-scroller">
+          <div class="scroll-holder" id="holder-one">
+            <div class="mate-selector"><img onclick="loadInfo(0)" src="res/exchanger_icon.png" alt="Air.Net - Échangeurs d'air" /></div>
+            <div class="mate-selector"><img onclick="loadInfo(1)" src="res/furnace_icon.png" alt="Air.Net - Fournaises" /></div>
+            <div class="mate-selector"><img onclick="loadInfo(2)" src="res/cooling_icon.png" alt="Air.Net - Climatiseurs" /></div>
+            <div class="mate-selector"><img onclick="loadInfo(3)" src="res/dryer_icon.png" alt="Air.Net - Conduits de sécheuse" /></div>
+          </div>
+          <div id="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="last-section">
+       <div id="container-last">
+        <p class="about-section-sub-title sub-right">Nos fidèles clients</p>
+        <div id="client-grid">
+          <a href="#"><img src="res/exchanger_icon.png" alt="ventilation CHUM" class="client-logo" /></a>
+        </div> 
+        <p class="about-section-sub-title">La critique nous aclâme</p>
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <div class="elfsight-app-0f46698b-987a-4448-8a67-d33fd44804ad"></div>
+      </div>
+    </section> -->
+
+    <script src="/js/toggleAnimations.js"></script>
+    <script src="/js/scrollToProjects.js"></script>
+    <script src="/js/scrollingAnimations/about_scroll.js"></script>
+    <script src="/jsresizeRefresher.js"></script>
+    <script src="/js/scrollTeam.js"></script>
+    <script src="/js/informationLoader.js"></script>
+    <script src="/js/treeHover.js"></script>
+
+    <script>
+      const needToScroll = $("#main-section").height() * 1.5;
+      const animationTimeToScroll = 500;
+      document.getElementById("scroller").onclick = function () {
+        $("body,html").animate({ scrollTop: needToScroll }, animationTimeToScroll);
+      };
+      window.onresize = function () {
+        refreshPage();
+        rescaleMates();
+        RescaleTree();
+      };
+      window.onload = function () {
+        wasAtTopPart = true;
+        UpdateNavWithScroll();
+        onStart();
+        loadInfo(0);
+        RescaleTree();
+      };
+
+      function RescaleTree() {
+        document.getElementById("tree-container").style.maxWidth = (8 / 5) * $("#container-right").height() + "px";
+        document.getElementById("img-showcase").style.maxWidth = 0.3 * $("#competence-showcase").height() + "px";
+      }
+
+      function scrollToTeam() {
+        $("body,html").animate({ scrollTop: needToScroll - 500 }, animationTimeToScroll);
+      }
+    </script>
+  </body>
+</html>

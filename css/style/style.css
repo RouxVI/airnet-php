@@ -1,0 +1,48 @@
+#scroller {
+  position: absolute;
+  bottom: 1%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  height: 8%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#scroller p {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.8vh;
+  transition: color 0.3s ease;
+}
+
+#scroller #indicator {
+  height: 60%;
+  font-size: 0;
+  width: 1px;
+  border-radius: 60px;
+  margin: 0 auto;
+  background-color: #fff;
+  transform: scaleX(2);
+  transform-origin: 50% 0;
+  animation: bob 3s infinite ease;
+  -moz-animation: bob 3s infinite ease;
+  -webkit-animation: bob 3s infinite ease;
+  transition: background-color 0.3s ease;
+}
+
+@keyframes bob {
+  50% {
+    transform: scaleY(0.5);
+  }
+}
+
+body[darkMode] #scroller p {
+  color: #fff;
+}
+body[darkMode] #scroller #indicator {
+  background-color: #fff;
+}

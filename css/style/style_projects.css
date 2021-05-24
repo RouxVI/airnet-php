@@ -1,0 +1,139 @@
+#projects_section {
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+body[darkMode] #projects_section {
+  background-color: #303030;
+}
+
+#projects_cta {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  width: 55%;
+  margin: 0 auto;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: #25619d;
+  font-weight: normal;
+  flex: 3;
+}
+
+body[darkMode] #projects_cta {
+  color: #fff;
+}
+
+#projects_cta p {
+  padding: 15px 75px;
+  margin: 15px auto;
+  width: fit-content;
+  font-size: 2.5vh;
+  letter-spacing: 0.3vh;
+}
+
+#projects_cta p:nth-of-type(1) {
+  font-size: 4vh;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+#cta_one {
+  transform-origin: 0 75%;
+}
+
+#cta_two {
+  transform-origin: 75% 50%;
+  text-align: justify;
+}
+
+#projects_cta a {
+  display: flex;
+  width: 30%;
+  height: 7%;
+  border-radius: 30px;
+  margin: 1% auto;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 2.3vh;
+  background-color: #039ed8;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.25);
+  transition: padding 0.2s ease-in-out;
+  -moz-transition: padding 0.2s ease-in-out;
+  -webkit-transition: padding 0.2s ease-in-out;
+}
+
+body[darkMode] #projects_cta a {
+  background-color: #fff;
+  color: #303030;
+}
+
+#projects_cta a:hover {
+  padding: 0 3%;
+}
+
+#project_holder {
+  flex: 1;
+  position: relative;
+}
+
+#project_holder img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-height: 100%;
+  max-width: 100%;
+  transition: opacity 0.27s ease-in;
+  -moz-transition: opacity 0.27s ease-in;
+  -webkit-transition: opacity 0.27s ease-in;
+}
+
+body #project_holder #projects_on {
+  opacity: 1;
+  z-index: 0;
+}
+
+body[darkMode] #project_holder #projects_on {
+  opacity: 0;
+  z-index: -1;
+}
+
+body[darkMode] #project_holder #projects_off {
+  opacity: 1;
+  z-index: 0;
+}
+
+body #project_holder #projects_off {
+  opacity: 0;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 700px) {
+  #projects_section #projects_cta {
+    width: 85%;
+  }
+
+  #projects_section #projects_cta p {
+    padding: 15px 0;
+    letter-spacing: 0;
+  }
+
+  #projects_section #projects_cta a {
+    width: 60%;
+  }
+  #cta_two {
+    text-align-last: center;
+  }
+}

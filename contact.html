@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/jpg" href="res/favicon.png" />
+
+    <title>AIR.NET - Contact</title>
+
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/simple_header.css" />
+    <link rel="stylesheet" href="/css/contact/contact.css " />
+    <link rel="stylesheet" href="/css/contact/contact_landing.css" />
+    <link rel="stylesheet" href="/css/contact/contact_infos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+      integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
+      integrity="sha256-2p2tRZlPowp3P/04Pw2rqVCSbhyV/IB7ZEVUglrDS/c="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"
+      integrity="sha256-peenofh8a9TIqKdPKIeQE7mJvuwh+J0To7nslvpj1jI="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a id="project_button" href="#">Services</a></li>
+          <li><a href="index.html">| Acceuil |</a></li>
+          <li><a href="/a-propos.html">À propos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="landing-section">
+      <div id="pastille">
+        <img src="res/Pastille.png" alt="Position" onclick="scrollToContact()" />
+        <div id="scroller"></div>
+      </div>
+      <p class="contact-title" id="contact-title">Contact</p>
+      <p class="contact-title" id="contact-intro">
+        Communiquez avec nous pour <span style="display: block">une soumission gratuite et sans engagement.</span>
+      </p>
+    </section>
+
+    <section id="contact-section">
+      <div id="container">
+        <div id="left-region">
+          <form id="contact-form" method="post" action="/php/contact_form.php">
+            <span>Communiquez avec nous pour une soumission gratuite et sans engagement.</span>
+            <div id="form-container">
+              <input id="name-input" type="text" name="name" placeholder="Nom | Nom de l'entreprise" required />
+              <div>
+                <p>Service recherché:</p>
+                <input class="radio" type="radio" id="radioA01" track="0" name="request-type" value="Soumission" required />
+                <label for="radioA01">Soumission</label>
+                <input class="radio" type="radio" id="radioA02" track="0" name="request-type" value="Informations" required />
+                <label for="radioA02">Informations</label>
+              </div>
+              <div>
+                <p>Type de bâtiment:</p>
+                <input class="radio" type="radio" id="radioB01" track="0" name="building-type" value="Résidentiel" required />
+                <label for="radioB01">Résidentiel</label>
+                <input class="radio" type="radio" id="radioB02" track="0" name="building-type" value="Commerciale" required />
+                <label for="radioB02">Commerciale</label>
+              </div>
+              <br />
+              <div id="holder">
+                <input id="email-input" type="email" name="email" placeholder="Courriel" required />
+                <select id="subject" type="text" name="subject">
+                  <option value="none">Services</option>
+                  <option value="Échangeur d'air">Échangeur d'air</option>
+                  <option value="Fournaise">Fournaise</option>
+                  <option value="Climatiseur">Climatiseur</option>
+                  <option value="Conduits de sécheuse">Conduits de sécheuse</option>
+                </select>
+              </div>
+            </div>
+            <textarea name="message" id="message" type="text" placeholder="Message" required></textarea>
+            <input id="submit" type="submit" value="Envoyer" />
+          </form>
+        </div>
+        <div id="right-region">
+          <div id="map-holder">
+            <img src="res/map.jpg" alt="air.net - location" id="map" />
+          </div>
+          <!-- <div id="map"></div> -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div id="footer-holder">
+        <div id="address">
+          <p><b>AIR.NET</b></p>
+          <p>555 Rue Hart,</p>
+          <p>Trois-Rivières, Qc, G9A 4R4</p>
+        </div>
+        <div id="contact-info">
+          <p><b>Invisinble</b></p>
+          <a href="mailto:services@airnet.ca">services@airnet.ca</a>
+          <p>(819) 979-0313</p>
+        </div>
+        <div id="social-container">
+          <a href="https://www.facebook.com/Airnet-105242981555474" target="_blank"
+            ><img class="social-icon" src="res/icons/facebook_icon.png" alt="Facebook"
+          /></a>
+          <a href="https://www.instagram.com/air.net1/" target="_blank"
+            ><img class="social-icon" src="res/icons/instagram_icon.png" alt="Instagram"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      window.addEventListener("resize", function () {
+        "use strict";
+        window.location.reload();
+      });
+    </script>
+    <script src="/js/scrollingAnimations/contact_scroll.js"></script>
+    <script src="/js/toggleAnimations.js"></script>
+    <script src="/js/googlemaps.js"></script>
+    <script src="/js/scrollToProjects.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5T_WIEzdl5KuAcIvHRDTKh-TAZLv_o0M&callback=initMap"></script>
+  </body>
+</html>
